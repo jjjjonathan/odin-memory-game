@@ -6,6 +6,19 @@ import Scoreboard from "./components/Scoreboard";
 export default function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [clickedList, setClickedList] = useState([]);
+
+  const handleCardClick = (event) => {
+    const clicked = event.target.dataset.logo;
+    if (!clickedList.includes(clicked)) {
+      setClickedList([...clickedList, clicked]);
+      setCurrentScore(currentScore + 1);
+    } else {
+      if (currentScore > highScore) setHighScore(currentScore);
+      setCurrentScore(0);
+      setClickedList([]);
+    }
+  };
 
   return (
     <div className="container">
@@ -16,7 +29,7 @@ export default function App() {
         </div>
         <Scoreboard currentScore={currentScore} highScore={highScore} />
       </div>
-      <Board />
+      <Board onCardClick={handleCardClick} />
     </div>
   );
 }
