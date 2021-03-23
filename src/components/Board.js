@@ -1,18 +1,25 @@
 import React from "react";
 import Card from "../components/Card";
 import "../styles/Board.css";
+import arrayShuffle from "array-shuffle";
 
 export default function Board(props) {
+  const cards = [
+    "google",
+    "facebook",
+    "apple",
+    "github",
+    "pinterest",
+    "tiktok",
+    "youtube",
+    "airbnb",
+  ];
+
   return (
     <div className="board">
-      <Card name="google" />
-      <Card name="facebook" />
-      <Card name="apple" />
-      <Card name="github" />
-      <Card name="pinterest" />
-      <Card name="tiktok" />
-      <Card name="youtube" />
-      <Card name="airbnb" />
+      {arrayShuffle(cards).map((card) => (
+        <Card name={card} key={card} />
+      ))}
     </div>
   );
 }
