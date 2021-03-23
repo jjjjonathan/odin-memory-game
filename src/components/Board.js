@@ -1,9 +1,10 @@
 import React from "react";
-import Card from "Card";
+import Card from "../components/Card";
+import "../styles/Board.css";
 
 export default function Board(props) {
   return (
-    <div>
+    <div className="board">
       <Card name="google" />
       <Card name="facebook" />
     </div>
