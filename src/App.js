@@ -3,8 +3,9 @@ import Board from "./components/Board";
 
 export default function App() {
   return (
-    <div>
-      <h1>Memory Game</h1>
+    <div className="container">
+      <h1>Logo Memory Game</h1>
+      <h2>Don't click the same icon twice!</h2>
       <Board />
     </div>
   );

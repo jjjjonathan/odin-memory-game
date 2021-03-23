@@ -6,6 +6,11 @@
   place-items: center;
 }
 
+.card:hover {
+  background: mediumseagreen;
+  cursor: pointer;
+}
+
 .icon {
   font-size: 6rem;
 }
